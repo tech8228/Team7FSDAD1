@@ -1,0 +1,7 @@
+2024/02/14  Ashok Chand  (First Scrum)
+1. Done 
+- Discuss about the proposal to submit
+- Design and discuss the DataBase 
+- prepare and discuss for Trello
+2. To do:
+- Create cards in trello for the projects
