@@ -1,7 +1,19 @@
-2024/02/14  Ashok Chand  (First Scrum)
-1. Done 
+2024/02/14  
+Ashok Chand  (First Scrum)
+1. Done since last meeting
 - Discuss about the proposal to submit
 - Design and discuss the DataBase 
 - prepare and discuss for Trello
-2. To do:
+2. Doing today
 - Create cards in trello for the projects
+
+
+2024/02/16
+Zachary McRae
+1. Done since last meeting
+- Created and submitted proposal
+2. Doing today
+- Adding to trello board
+- Researching developing admin panel
+3. Problems I expect to face
+- Lack of familiarity with c#
