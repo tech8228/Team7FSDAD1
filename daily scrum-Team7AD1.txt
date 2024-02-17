@@ -17,9 +17,7 @@ Zachary McRae
 - Researching developing admin panel
 3. Problems I expect to face
 - Lack of familiarity with c#
-
-
-2024/02/16  
+ 
 Ashok Chand  
 1. Done since last meeting
 - pushed the code in git
@@ -27,3 +25,12 @@ Ashok Chand
 2. Doing today
 - Creating SQL Database in Azure
 - Create the required tables in Clould
+
+2024/02/17
+Zachary McRae
+1. Done since last meeting
+- Researched how to construct the admin panel. Decided that multiple pages for different functions would be best.
+2. Doing today
+- Continue researching, start constructing the panel pages.
+3. Problems I expect to face
+- Lack of familiarity with c#
