@@ -18,6 +18,7 @@ Zachary McRae
 3. Problems I expect to face
 - Lack of familiarity with c#
  
+2024/02/16
 Ashok Chand  
 1. Done since last meeting
 - pushed the code in git
@@ -34,3 +35,12 @@ Zachary McRae
 - Continue researching, start constructing the panel pages.
 3. Problems I expect to face
 - Lack of familiarity with c#
+
+2024/02/18
+Ashok Chand  
+1. Done since last meeting
+- Did create tables based using SSMS.
+- Try to implement Code first approach for table creation using EntityFramework  
+2. Doing today
+- Create the required tables in Clould
+- Research on how to handle multiple tables in C#
