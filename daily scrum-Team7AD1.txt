@@ -44,3 +44,13 @@ Ashok Chand
 2. Doing today
 - Create the required tables in Clould
 - Research on how to handle multiple tables in C#
+
+
+2024/02/19
+Ashok Chand  
+1. Done since last meeting
+- create tables using SSMS.
+- Was able to connect table via Visual Studio  
+2. Doing today
+- Check if this sql with initial test code 
+- Work in the student view 
