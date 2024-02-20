@@ -44,6 +44,7 @@ Ashok Chand
 2. Doing today
 - Create the required tables in Clould
 - Research on how to handle multiple tables in C#
+<<<<<<< HEAD
 
 
 2024/02/19
@@ -54,3 +55,5 @@ Ashok Chand
 2. Doing today
 - Check if this sql with initial test code 
 - Work in the student view 
+=======
+>>>>>>> branch8
