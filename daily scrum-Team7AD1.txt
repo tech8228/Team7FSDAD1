@@ -57,3 +57,14 @@ Ashok Chand
 - Work in the student view 
 =======
 >>>>>>> branch8
+
+
+
+2024/02/19
+Ashok Chand  
+1. Done since last meeting
+- Was able to create register 
+- Check for login
+2. Doing today
+- work on handling the login user type
+- work on handling the register user type
