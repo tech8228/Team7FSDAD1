@@ -28,9 +28,12 @@ namespace StudentAttendenceFrmV
             if (dt.Rows.Count > 0 )
             {
                 //valid login
-                MessageBox.Show("Login OK");
                 UserID = int.Parse(dt.Rows[0]["UserID"].ToString());
-                logingFlag = true;
+                MessageBox.Show("Login OK" +UserID.ToString());
+                
+                logingFlag = true; 
+                this.Close();
+               
             }
             else
             {
@@ -38,7 +41,15 @@ namespace StudentAttendenceFrmV
                 MessageBox.Show("Access Denied");
                 logingFlag = false;
             }
-            Close();
+            
+        }
+
+
+        
+
+        private void BtnLoginCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

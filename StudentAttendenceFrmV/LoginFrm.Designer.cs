@@ -34,6 +34,7 @@
             this.LblUser = new MetroFramework.Controls.MetroLabel();
             this.LblPassword = new MetroFramework.Controls.MetroLabel();
             this.BtnLogin = new MetroFramework.Controls.MetroButton();
+            this.BtnLoginCancel = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,12 +83,21 @@
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(118, 303);
+            this.BtnLogin.Location = new System.Drawing.Point(59, 303);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(75, 23);
             this.BtnLogin.TabIndex = 5;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            // 
+            // BtnLoginCancel
+            // 
+            this.BtnLoginCancel.Location = new System.Drawing.Point(176, 303);
+            this.BtnLoginCancel.Name = "BtnLoginCancel";
+            this.BtnLoginCancel.Size = new System.Drawing.Size(75, 23);
+            this.BtnLoginCancel.TabIndex = 6;
+            this.BtnLoginCancel.Text = "Cancel";
+            this.BtnLoginCancel.Click += new System.EventHandler(this.BtnLoginCancel_Click);
             // 
             // LoginFrm
             // 
@@ -95,6 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 374);
+            this.Controls.Add(this.BtnLoginCancel);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.LblPassword);
             this.Controls.Add(this.LblUser);
@@ -119,5 +130,6 @@
         private MetroFramework.Controls.MetroLabel LblUser;
         private MetroFramework.Controls.MetroLabel LblPassword;
         private MetroFramework.Controls.MetroButton BtnLogin;
+        private MetroFramework.Controls.MetroButton BtnLoginCancel;
     }
 }

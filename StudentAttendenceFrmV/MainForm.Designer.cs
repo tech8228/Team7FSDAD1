@@ -69,6 +69,9 @@
             this.StatusLblUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.classesTableAdapter = new StudentAttendenceFrmV.DataSet1TableAdapters.ClassesTableAdapter();
             this.attendanceRecordsTableAdapter = new StudentAttendenceFrmV.DataSet1TableAdapters.AttendanceRecordsTableAdapter();
+            this.BtnLogout = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.BtnSignIn = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -87,11 +90,12 @@
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(814, 634);
+            this.metroTabControl1.Size = new System.Drawing.Size(1210, 813);
             this.metroTabControl1.TabIndex = 0;
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.metroButton2);
             this.metroTabPage1.Controls.Add(this.BtnRegister);
             this.metroTabPage1.Controls.Add(this.BtnGetValues);
             this.metroTabPage1.Controls.Add(this.BtnAddStudents);
@@ -106,10 +110,11 @@
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 39);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(806, 591);
+            this.metroTabPage1.Size = new System.Drawing.Size(1202, 770);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Attendance";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
+           
             // 
             // BtnRegister
             // 
@@ -394,9 +399,9 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.StatusLblUser});
-            this.statusStrip1.Location = new System.Drawing.Point(20, 668);
+            this.statusStrip1.Location = new System.Drawing.Point(20, 847);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(814, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1210, 26);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -424,11 +429,38 @@
             // 
             this.attendanceRecordsTableAdapter.ClearBeforeFill = true;
             // 
+            // BtnLogout
+            // 
+            this.BtnLogout.Location = new System.Drawing.Point(676, 31);
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.Size = new System.Drawing.Size(117, 23);
+            this.BtnLogout.TabIndex = 2;
+            this.BtnLogout.Text = "Sign Out";
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(644, 291);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(8, 8);
+            this.metroButton2.TabIndex = 13;
+            this.metroButton2.Text = "metroButton2";
+            // 
+            // BtnSignIn
+            // 
+            this.BtnSignIn.Location = new System.Drawing.Point(544, 31);
+            this.BtnSignIn.Name = "BtnSignIn";
+            this.BtnSignIn.Size = new System.Drawing.Size(117, 23);
+            this.BtnSignIn.TabIndex = 3;
+            this.BtnSignIn.Text = "Sign In";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 714);
+            this.ClientSize = new System.Drawing.Size(1250, 893);
+            this.Controls.Add(this.BtnSignIn);
+            this.Controls.Add(this.BtnLogout);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.metroTabControl1);
             this.Name = "MainForm";
@@ -493,6 +525,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton BtnRegister;
+        private MetroFramework.Controls.MetroButton BtnLogout;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton BtnSignIn;
     }
 }
 

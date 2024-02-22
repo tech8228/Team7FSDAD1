@@ -330,7 +330,7 @@ where ClassID= @ClassID and DateAttendance = @Date</CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT AttendanceRecords.*
 FROM     AttendanceRecords
-where DATEPART(MONTH, DateAttendance) = @month and StudentName =@student and Status=@status
+where MONTH(DateAttendance) = @month AND StudentName =@student AND Status=@status
 
 </CommandText>
                     <Parameters>

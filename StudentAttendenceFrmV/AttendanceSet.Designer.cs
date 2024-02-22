@@ -3591,8 +3591,8 @@ SELECT RecordID, StudentID, ClassID, DateAttendance, Status, StudentName, ClassN
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DateAttendance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT AttendanceRecords.*\r\nFROM     AttendanceRecords\r\nwhere DATEPART(MONTH, Dat" +
-                "eAttendance) = @month and StudentName =@student and Status=@status\r\n\r\n";
+            this._commandCollection[2].CommandText = "SELECT AttendanceRecords.*\r\nFROM     AttendanceRecords\r\nwhere MONTH(DateAttendanc" +
+                "e) = @month AND StudentName =@student AND Status=@status\r\n\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@month", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "StudentName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

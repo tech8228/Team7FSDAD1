@@ -26,7 +26,7 @@ namespace StudentAttendenceFrmV
         private void MainForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSet1.AttendanceRecords' table. You can move, or remove it, as needed.
-          
+                
             // TODO: This line of code loads data into the 'dataSet1.Classes' table. You can move, or remove it, as needed.
 
 
@@ -43,18 +43,28 @@ namespace StudentAttendenceFrmV
                 newLogin.ShowDialog();
 
                 if (newLogin.logingFlag == false)
+
                 {
+                    BtnSignIn.Visible = true;
                     Close();
                 }
                 else
                 {
+                   
                     UserID = newLogin.UserID;
+                    MessageBox.Show(UserID.ToString());
                     StatusLblUser.Text = UserID.ToString();
                     loggedIn = 1;
 
 
                     this.classesTableAdapter.Fill(this.dataSet1.Classes);
                     classesBindingSource.Filter = "UserID = '" + UserID.ToString() + "'";
+                    BtnSignIn.Visible = false;
+                     this.BringToFront(); 
+                    this.Focus();
+
+                    
+                    
                 }
             }
         }
@@ -145,6 +155,7 @@ namespace StudentAttendenceFrmV
             // get Students
             StudentsTableAdapter stuAdpt = new StudentsTableAdapter();
             DataTable dt_Students = stuAdpt.GetDataByClassID((int)comboBox1.SelectedValue);
+            AttendanceRecordsTableAdapter ada = new AttendanceRecordsTableAdapter();
             int P = 0;
             int A = 0;
             int L = 0;
@@ -154,15 +165,15 @@ namespace StudentAttendenceFrmV
             foreach(DataRow row in dt_Students.Rows)
             {
                 // presence count
-                P = (int)AttendanceRecordsTableAdapter.GetDataByReport(dateTimePicker1.Value.Month, row[1].ToString(), "Present").Rows[0][6];
+                //P = (int)AttendanceRecordsTableAdapter.GetDataByReport(dateTimePicker1.Value.Month, row[1].ToString(), "Present").Rows[0][6];
 
                 //absence count
-                A = (int)AttendanceRecordsTableAdapter.GetDataByReport(dateTimePicker1.Value.Month, row[1].ToString(), "Absent").Rows[0][6];
+                //A = (int)AttendanceRecordsTableAdapter.GetDataByReport(dateTimePicker1.Value.Month, row[1].ToString(), "Absent").Rows[0][6];
                 //late
-                L = (int)AttendanceRecordsTableAdapter.GetDataByReport(dateTimePicker1.Value.Month, row[1].ToString(), "Late").Rows[0][6];
+                //L = (int)AttendanceRecordsTableAdapter.GetDataByReport(dateTimePicker1.Value.Month, row[1].ToString(), "Late").Rows[0][6];
 
                 //Execuse
-                E = (int)AttendanceRecordsTableAdapter.GetDataByReport(dateTimePicker1.Value.Month, row[1].ToString(), "Excused").Rows[0][6];
+                //E = (int)AttendanceRecordsTableAdapter.GetDataByReport(dateTimePicker1.Value.Month, row[1].ToString(), "Excused").Rows[0][6];
                 
                 // add to listView
                 ListViewItem lsvItem = new ListViewItem();
@@ -183,5 +194,21 @@ namespace StudentAttendenceFrmV
             RegisterFrm regFrm = new RegisterFrm();
             regFrm.ShowDialog();
         }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            
+            //Open Login Form
+            LoginFrm newLogin = new LoginFrm();
+            newLogin.logingFlag = false;
+            BtnSignIn.Visible = true;
+            
+
+            StatusLblUser.Text = "";
+            newLogin.ShowDialog();
+
+        }
+
+      
     }
 }
