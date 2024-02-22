@@ -60,7 +60,7 @@ Ashok Chand
 
 
 
-2024/02/19
+2024/02/20
 Ashok Chand  
 1. Done since last meeting
 - Was able to create register 
@@ -68,3 +68,13 @@ Ashok Chand
 2. Doing today
 - work on handling the login user type
 - work on handling the register user type
+
+
+2024/02/21
+Ashok Chand  
+1. Done since last meeting
+- create registration for student 
+- All student/teacher/admin can  login
+2. Doing today
+- Populate registration for users and student
+
