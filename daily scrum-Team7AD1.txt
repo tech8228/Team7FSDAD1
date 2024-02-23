@@ -78,3 +78,10 @@ Ashok Chand
 2. Doing today
 - Populate registration for users and student
 
+2024/02/22
+Ashok Chand  
+1. Done since last meeting
+- Registration was done for student 
+- working on course data 
+2. Doing today
+- Populate stundet's course and grades 
