@@ -85,3 +85,19 @@ Ashok Chand
 - working on course data 
 2. Doing today
 - Populate stundet's course and grades 
+
+2024/02/23
+Ashok Chand  
+1. Done since last meeting
+- Was able to list individual details
+ 
+2. Doing today
+- Work in teacher details 
+
+2024/02/24
+Ashok Chand  
+1. Done since last meeting
+- teacher is able to populate details based on course 
+- working on more customize display 
+2. Doing today
+- Teacher should be able to edit grades 
