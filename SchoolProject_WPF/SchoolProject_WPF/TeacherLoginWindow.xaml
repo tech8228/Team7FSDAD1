@@ -12,12 +12,12 @@
             
             <TextBlock Text="Teacher Login" FontSize="24" Foreground="DarkBlue" HorizontalAlignment="Center"/>
             <Label
-            Content="User Name" Foreground="DarkBlue" Width="358"/>
-            <TextBox x:Name="TbxUserName" Width="360"/>
+            Content="User Name" Foreground="DarkBlue" Width="350"/>
+            <TextBox x:Name="TbxUserName" Width="350"/>
             <Label Content="Password" Foreground="DarkBlue" Width="363" Margin="10,20,10,0"/>
-            <TextBox x:Name="TbxUserPassword" Width="360"/>
-            <Button x:Name="BtnUserLogin" Content="Login" Margin="10" Background="LightBlue" Click="BtnUserLogin_Click" Width="361"/>
-            <Button x:Name="BtnUserReturn" Content="Return" Background="LightBlue" Click="BtnUserReturn_Click" Height="20" Width="360"/>
+            <TextBox x:Name="TbxUserPassword" Width="350" Margin="0,0,0,20"/>
+            <Button x:Name="BtnUserLogin" Content="Login" Margin="5" Background="LightBlue" Click="BtnUserLogin_Click" Width="350"/>
+            <Button x:Name="BtnUserReturn" Margin="5"  Content="Return" Background="LightBlue" Click="BtnUserReturn_Click" Height="20" Width="350"/>
 
 
 

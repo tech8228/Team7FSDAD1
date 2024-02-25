@@ -4,10 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolProject_WPF"
-        mc:Ignorable="d"
-        Title="MainTeacher" Height="450" Width="800">
+        mc:Ignorable="d"  ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Teacher Window" Height="500" Width="530">
     <Grid>
-        <Label Content="This is Teacher Page" HorizontalAlignment="Left" Margin="147,0,0,0" VerticalAlignment="Center" Height="134" Width="495" FontSize="48"/>
+
+        <TextBlock x:Name="TbxTeacher" Text="-" FontSize="24" Foreground="DarkBlue" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        
+
+        <StackPanel VerticalAlignment="Top" Height="320" Margin="10,57,101,0">
+
+            <DataGrid x:Name="DgTeacher" Width="377" Height="252" AutoGenerateColumns="True" />
+
+           
+
+            <Button x:Name="BtnFrmCancel" Content="Sign Out" Margin="10,30,10,0" Background="LightBlue"  Width="281" Click="BtnFrmCancel_Click" />
+
+
+        </StackPanel>
+        <WrapPanel VerticalAlignment="Top" Margin="20,52,5,0" HorizontalAlignment="Right">
+            <ItemsControl ItemsSource="{Binding listCourse}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Content="{Binding CourseName}" Margin="5" Click="CourseButton_Click" Width="100"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </WrapPanel>
 
     </Grid>
 </Window>

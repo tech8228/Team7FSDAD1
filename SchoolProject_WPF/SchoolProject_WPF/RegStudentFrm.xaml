@@ -6,24 +6,30 @@
         xmlns:local="clr-namespace:SchoolProject_WPF"
         mc:Ignorable="d"  ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Title="Student Registration Form" Height="450" Width="400">
+        Title="Student Registration Form" Height="500" Width="410">
     <Grid>
-        
-        <StackPanel VerticalAlignment="Center" Height="400">
+
+        <StackPanel VerticalAlignment="Center" Height="450">
             <TextBlock Text="Student Form" FontSize="24" Foreground="DarkBlue" HorizontalAlignment="Center"/>
             <Label Content="User Name: " Foreground="DarkBlue" Margin="10,20,10,0"/>
             <TextBox x:Name="TbxFrmName" Width="372" Margin="10,0,10,0"/>
             <Label Content="Address: " Foreground="DarkBlue" Margin="10,5,10,0"/>
             <TextBox x:Name="TbxFrmAddress" Width="372" Margin="10,0,10,0"/>
+            
             <Label Content="Date of Birth" Foreground="DarkBlue" Margin="10,10,10,0"/>
-            <TextBox x:Name="TbxFrmDate" Width="372" Margin="10,0,10,0"/>
+            
+            <DatePicker x:Name="TbxRegDatePicker" Width="372" Margin="10,0,10,0"/>
             <Label Content="Email: " Foreground="DarkBlue" Margin="10,5,10,0"/>
             <TextBox x:Name="TbxFrmEmail" Width="372" Margin="10,0,10,0"/>
             <Label Content="Password: " Foreground="DarkBlue" Margin="10,5,10,0"/>
             <TextBox x:Name="TbxFrmPassword" Width="372" Margin="10,0,10,0"/>
+            <Label Content="Confirm Password: " Foreground="DarkBlue" Margin="10,5,10,0"/>
+            <TextBox x:Name="TbxFrmConfirmPassword" Width="372" Margin="10,0,10,0"/>
+
 
             <Button x:Name="BtnFrmRegister" Content="Register" Margin="10,30,10,0" Background="LightBlue"  Width="374" Click="BtnFrmRegister_Click"/>
-            <Button x:Name="BtnFrmCancel" Content="Cancel" Margin="10,10,10,0" Background="LightBlue"  Width="374" Click="BtnFrmCancel_Click"/>
+            <Button x:Name="BtnFrmCancel" Content="Back" Margin="10,10,10,0" Background="LightBlue"  Width="374" Click="BtnFrmCancel_Click"/>
+
         </StackPanel>
 
     </Grid>

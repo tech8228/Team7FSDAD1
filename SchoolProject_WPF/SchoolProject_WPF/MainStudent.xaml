@@ -4,10 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolProject_WPF"
-        mc:Ignorable="d"
-        Title="MainStudent" Height="450" Width="800">
+        mc:Ignorable="d"  ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Student Window" Height="500" Width="500">
     <Grid>
-        <Label Content="This is Student main" HorizontalAlignment="Left" Height="121" Margin="131,166,0,0" VerticalAlignment="Top" Width="475" FontSize="48"/>
+        <StackPanel VerticalAlignment="Center" Height="450">
+            <TextBlock x:Name="TbxStudent" Text="-" FontSize="24" Foreground="DarkBlue" HorizontalAlignment="Center"/>
+            
+            <DataGrid x:Name="DgStudent" Width="450" Height="300" AutoGenerateColumns="True" />
 
+
+            <Button x:Name="BtnRefresh" Content="Refresh" Margin="10,30,10,0" Background="LightBlue"  Width="374" Click="BtnRefresh_Click" />
+            <Button x:Name="BtnFrmCancel" Content="Sign Out" Margin="10,5,10,0" Background="LightBlue"  Width="374" Click="BtnFrmCancel_Click" />
+            
+
+        </StackPanel>
     </Grid>
 </Window>
