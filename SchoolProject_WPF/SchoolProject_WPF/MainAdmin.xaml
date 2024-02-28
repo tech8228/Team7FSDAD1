@@ -4,10 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolProject_WPF"
-        mc:Ignorable="d"
-        Title="MainAdmin" Height="450" Width="800">
+        mc:Ignorable="d" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="MainAdmin" Height="500" Width="530">
     <Grid>
-        <Label Content="This is Admin Page" HorizontalAlignment="Left" Margin="134,166,0,0" VerticalAlignment="Top" Height="132" Width="466" FontSize="48"/>
 
+
+
+        <StackPanel VerticalAlignment="Top" Height="320" Margin="10,57,16,0">
+
+            <DataGrid x:Name="DgCourses" MouseDoubleClick="DgCourse_MouseDoubleClick" Width="476" Height="252" AutoGenerateColumns="True" />
+
+            <Button x:Name="BtnFrmRefresh" Content="Refresh" Margin="10,20,10,0" Background="LightBlue"  Width="281" Click="BtnFrmRefresh_Click" />
+
+            <Button x:Name="BtnFrmCancel" Content="Back" Margin="10,05,10,0" Background="LightBlue"  Width="281" Click="BtnFrmCancel_Click" />
+
+
+        </StackPanel>
+
+        <Button x:Name="BtnNewCourse" Content="Add Course" Background="LightBlue" HorizontalAlignment="Left" Margin="26,20,0,0" VerticalAlignment="Top" Width="100" Click="BtnAddCourse_Click"/>
+        <Button x:Name="BtnRegisterStudent" Content="Assign Course" Background="LightBlue" HorizontalAlignment="Center" Margin="0,20,130,0" VerticalAlignment="Top" Width="100" Click="BtnRegisterStudent_Click"/>
+        <Button x:Name="BtnStudentProfile" Content="Student Profile" Background="LightBlue" HorizontalAlignment="Center" Margin="130,20,0,0" VerticalAlignment="Top" Width="100" Click="BtnStudentProfile_Click"/>
+        <Button x:Name="BtnTeacherProfile" Content="Teacher Profile" Background="LightBlue" HorizontalAlignment="Left" Margin="400,20,0,0" VerticalAlignment="Top" Width="100" Click="BtnTeacherProfile_Click"/>
+
+        <!-- <ListView x:Name="LsvCourseView" HorizontalAlignment="Left" Height="250" Margin="395,57,0,0" VerticalAlignment="Top" Width="108"/> -->
     </Grid>
 </Window>
+
