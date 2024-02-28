@@ -29,5 +29,6 @@
                 </TextBlock>
             </Label>
         </StackPanel>
+        <!-- <Button x:Name="TempButton"  Content="Login as Teacher" Width="100" Height="50" HorizontalAlignment="Left" Margin="10" Padding="10" Background="LightBlue" Foreground="DarkBlue" Click="TempButton_Click"/> -->
     </Grid>
 </Window>

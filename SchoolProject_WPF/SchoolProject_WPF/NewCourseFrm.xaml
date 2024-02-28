@@ -1,0 +1,31 @@
+﻿<Window x:Class="SchoolProject_WPF.NewCourseFrm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolProject_WPF"
+        mc:Ignorable="d" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="New Course" Height="500" Width="410">
+    <Grid>
+
+        <StackPanel VerticalAlignment="Center" Height="450">
+            <TextBlock Text="ADD New Course" FontSize="24" Foreground="DarkBlue" HorizontalAlignment="Center"/>
+            <Label Content="Name: " Foreground="DarkBlue" Margin="10,20,10,0"/>
+            <TextBox x:Name="TbxCourseName" Width="372" Margin="10,0,10,0"/>
+
+           
+            <!--<Label Content="Teacher: " Foreground="DarkBlue" Margin="10,5,10,0"/>
+            <TextBox x:Name="TbxFrmEmail" Width="372" Margin="10,0,10,0"/> -->
+            <Label Content="Weekdays Schedule : " Foreground="DarkBlue" Margin="10,10,10,0"/>
+            <!-- <ComboBox x:Name="CbxWeekdays" Foreground="DarkBlue" Width="372" Margin="10,5,10,0" /> -->
+           <ListBox x:Name="LbxWeekdays" SelectionMode="Multiple" Foreground="DarkBlue" Width="372" Margin="10,5,10,0"/>
+
+            <Button x:Name="BtnFrmRegister" Content="Register" Margin="10,30,10,0" Background="LightBlue"  Width="374" Click="BtnFrmRegister_Click"/>
+            <Button x:Name="BtnFrmCancel" Content="Back" Margin="10,10,10,0" Background="LightBlue"  Width="374" Click="BtnFrmCancel_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
+

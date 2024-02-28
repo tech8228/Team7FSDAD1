@@ -13,7 +13,7 @@
             <Label Content="Admin Name" Foreground="DarkBlue" Margin="10,20,10,0"/>
             <TextBox x:Name="TbxUserName" Width="372"/>
             <Label Content="Password" Foreground="DarkBlue" Width="378" Margin="10,20,10,0"/>
-            <TextBox x:Name="TbxUserPassword" Margin="10" Width="372"/>
+            <PasswordBox x:Name="TbxUserPassword" Margin="10" Width="372"/>
             
             <!--<PasswordBox x:Name="txtPassword" Width="374"/>-->
             <Button x:Name="BtnAdminLogin" Content="Login" Margin="10" Background="LightBlue" Click="BtnAdminLogin_Click" Width="374"/>

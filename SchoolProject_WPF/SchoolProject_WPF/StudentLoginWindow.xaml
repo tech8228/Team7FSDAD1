@@ -14,7 +14,8 @@
             <Label Content="Student Name" Foreground="DarkBlue" Width="376"/>
             <TextBox x:Name="TbxStudentName" Margin="10" Width="363"/>
             <Label Content="Password" Foreground="DarkBlue" Width="376"/>
-            <TextBox x:Name="TbxPassword" Margin="10" Width="363"/>
+            
+            <PasswordBox x:Name="TbxPassword" Margin="10" Width="363"/>
             <Button x:Name="BtnStudentLogin" Content="Login" Margin="10" Background="LightBlue" Click="BtnStudentLogin_Click" Width="366"/>
             <Button x:Name="BtnStudentReturn" Content="Return" Background="LightBlue" Click="BtnStudentReturn_Click" Height="20" Width="366"/>
         </StackPanel>

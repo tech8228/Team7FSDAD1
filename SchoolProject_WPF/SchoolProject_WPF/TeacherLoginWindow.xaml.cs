@@ -19,7 +19,7 @@ namespace SchoolProject_WPF
     {
         public int teacherLogged { get; set; }
         public string teacherName { get; set; }
-        string sqlString = "Data Source=.;Initial Catalog=StudentDb;Integrated Security=True;Encrypt=False";
+        
         
         public TeacherLoginWindow()
         {
@@ -28,46 +28,51 @@ namespace SchoolProject_WPF
 
         private void BtnUserLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TbxUserName.Text) || string.IsNullOrEmpty(TbxUserPassword.Text))
+            if (string.IsNullOrEmpty(TbxUserName.Text) || string.IsNullOrEmpty(TbxUserPassword.Password))
             {
                 MessageBox.Show("Cannot be Empty.");
                 return;
             }
             try
             {
-                string query = "SELECT UserID, Name FROM Users WHERE Name = @username AND Password = @password AND Role =@role";
+                string query = "SELECT UserID, Name, Password FROM Users WHERE Name = @username AND Role =@role";
 
-                using (SqlConnection con = new SqlConnection(sqlString))
+                using (SqlConnection con = new SqlConnection(DbString.conString))
                 {
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@username", TbxUserName.Text);
-                        cmd.Parameters.AddWithValue("@password", TbxUserPassword.Text);
+                       
                         cmd.Parameters.AddWithValue("@role", "Teacher");
-
-
-
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
+                                    string foundPassword = reader["Password"].ToString();
+                                if (BCrypt.Net.BCrypt.Verify(TbxUserPassword.Password, foundPassword))
+                                //if (foundPassword == TbxUserPassword.Password)
+                                {
 
-                                teacherLogged = Convert.ToInt32(reader["UserID"]);
-                                teacherName = Convert.ToString(reader["Name"]);
-                                // 
+                                    teacherLogged = Convert.ToInt32(reader["UserID"]);
+                                    teacherName = Convert.ToString(reader["Name"]);
+                                
 
-                                MessageBox.Show("Logged In", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                                this.Close();
-                                MainTeacher teacherFrm = new MainTeacher(teacherLogged, teacherName);
-                                teacherFrm.ShowDialog();
+                                    //MessageBox.Show("Logged In", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    this.Close();
+                                    MainTeacher teacherFrm = new MainTeacher(teacherLogged, teacherName);
+                                    teacherFrm.ShowDialog();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Username or Password did not match", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                }
+
                             }
                             else
                             {
-                                MessageBox.Show("Username or Password did not match", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                MessageBox.Show("User not found", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                             }
-
-                            
                         }
                     }
                 }

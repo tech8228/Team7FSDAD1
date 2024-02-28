@@ -74,6 +74,18 @@
     <Compile Include="AdminLoginWindow.xaml.cs">
       <DependentUpon>AdminLoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AssignCourseTeacherFrm.xaml.cs">
+      <DependentUpon>AssignCourseTeacherFrm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditCourseFrm.xaml.cs">
+      <DependentUpon>EditCourseFrm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditStudentDetailsFrm.xaml.cs">
+      <DependentUpon>EditStudentDetailsFrm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditTeacherDetailsFrm.xaml.cs">
+      <DependentUpon>EditTeacherDetailsFrm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Grade.xaml.cs">
       <DependentUpon>Grade.xaml</DependentUpon>
     </Compile>
@@ -86,8 +98,20 @@
     <Compile Include="MainTeacher.xaml.cs">
       <DependentUpon>MainTeacher.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewCourseFrm.xaml.cs">
+      <DependentUpon>NewCourseFrm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegStudentFrm.xaml.cs">
       <DependentUpon>RegStudentFrm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegTeacherFrm.xaml.cs">
+      <DependentUpon>RegTeacherFrm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentCourseRegistrationFrm.xaml.cs">
+      <DependentUpon>StudentCourseRegistrationFrm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentDetailsFrm.xaml.cs">
+      <DependentUpon>StudentDetailsFrm.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentLoginWindow.xaml.cs">
       <DependentUpon>StudentLoginWindow.xaml</DependentUpon>
@@ -95,7 +119,26 @@
     <Compile Include="TeacherLoginWindow.xaml.cs">
       <DependentUpon>TeacherLoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TeachersDetails.xaml.cs">
+      <DependentUpon>TeachersDetails.xaml</DependentUpon>
+    </Compile>
     <Page Include="AdminLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AssignCourseTeacherFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditCourseFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditStudentDetailsFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditTeacherDetailsFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,7 +170,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewCourseFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegStudentFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegTeacherFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentCourseRegistrationFrm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentDetailsFrm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,6 +195,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TeacherLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeachersDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -24,7 +24,7 @@ namespace SchoolProject_WPF
     {
 
         public int studentLog { get; set; }
-        String conString = "Data Source=.;Initial Catalog=StudentDb;Integrated Security=True;Encrypt=False";
+
         public MainStudent(int studentLogged)
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace SchoolProject_WPF
         {
 
 
-            SqlConnection con = new SqlConnection(conString);
+            using (SqlConnection con = new SqlConnection(DbString.conString))
             {
                 try
                 {
@@ -45,16 +45,19 @@ namespace SchoolProject_WPF
                     string query1 = @"SELECT s.StudentID, s.Name AS StudentName, s.Address, s.DateOfBirth, s.Email
                                      FROM Students s WHERE s.StudentID = @studentID";
 
-                    SqlCommand cmd1 = new SqlCommand(query1, con);
-                    cmd1.Parameters.AddWithValue("@studentID", studentLog);
+                    using (SqlCommand cmd1 = new SqlCommand(query1, con))
+                    {
+                        cmd1.Parameters.AddWithValue("@studentID", studentLog);
 
-                    SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
-                    DataTable studentDetailsTable1 = new DataTable();
-                    adapter1.Fill(studentDetailsTable1);
+                        using (SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1))
+                        {
+                            DataTable studentDetailsTable1 = new DataTable();
+                            adapter1.Fill(studentDetailsTable1);
 
-                    TbxStudent.Text = studentDetailsTable1.Rows[0]["StudentName"].ToString();
+                            TbxStudent.Text = studentDetailsTable1.Rows[0]["StudentName"].ToString();
+                        }
+                    }
 
-                    
                     // Construct the SQL query with joins
                     string query = @"SELECT c.CourseName, c.DaysOfWeek, r.[Final Grade]
                                      FROM Students s
@@ -62,37 +65,37 @@ namespace SchoolProject_WPF
                                      INNER JOIN Courses c ON r.CourseID = c.CourseID
                                      WHERE s.StudentID = @studentID";
 
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@studentID", studentLog);
-
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable studentDetailsTable = new DataTable();
-                    adapter.Fill(studentDetailsTable);
-                    string studentName = string.Empty;
-                    if (studentDetailsTable.Rows.Count > 0)
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        
-                        DgStudent.ItemsSource = studentDetailsTable.DefaultView;
-                        DgStudent.IsReadOnly = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show("You have not been registered to any Courses yet");
+                        cmd.Parameters.AddWithValue("@studentID", studentLog);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable studentDetailsTable = new DataTable();
+                            adapter.Fill(studentDetailsTable);
+
+                            if (studentDetailsTable.Rows.Count > 0)
+                            {
+                                DgStudent.ItemsSource = studentDetailsTable.DefaultView;
+                                DgStudent.IsReadOnly = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("You have not been registered to any Courses yet");
+                            }
+                        }
                     }
 
-                    
-                    
+
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("An error occurred: " + ex.Message);
                 }
-                finally
-                {
-                    con.Close(); // Close the connection after use
-                }
+
             }
-        
+
 
         }
 
@@ -105,5 +108,6 @@ namespace SchoolProject_WPF
         {
             StudentDetails();
         }
-    }
+
+    }    
 }

@@ -20,7 +20,7 @@ namespace SchoolProject_WPF
 
         public int adminLogged { get; set; }
         public string adminName { get; set; }
-        string sqlString = "Data Source=.;Initial Catalog=StudentDb;Integrated Security=True;Encrypt=False";
+        
         public AdminLoginWindow()
         {
             InitializeComponent();
@@ -30,22 +30,24 @@ namespace SchoolProject_WPF
 
         private void BtnAdminLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TbxUserName.Text) || string.IsNullOrEmpty(TbxUserPassword.Text))
+            if (string.IsNullOrEmpty(TbxUserName.Text) || string.IsNullOrEmpty(TbxUserPassword.Password))
             {
                 MessageBox.Show("Cannot be Empty.");
                 return;
             }
             try
             {
-                string query = "SELECT COUNT(*) FROM Users WHERE Name = @username AND Password = @password AND Role =@role";
 
-                using (SqlConnection con = new SqlConnection(sqlString))
+
+                string query = "SELECT Password FROM Users WHERE Name = @username AND Role =@role";
+
+                using (SqlConnection con = new SqlConnection(DbString.conString))
                 {
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@username", TbxUserName.Text);
-                        cmd.Parameters.AddWithValue("@password", TbxUserPassword.Text);
+
                         cmd.Parameters.AddWithValue("@role", "Admin");
 
 
@@ -54,20 +56,29 @@ namespace SchoolProject_WPF
                         {
                             if (reader.Read())
                             {
-                                //adminLogged = Convert.ToInt32(reader["UserID"]);
-                                //adminName = Convert.ToString(reader["Name"]);
+                                string foundPassword = reader["Password"].ToString();
+                                if (BCrypt.Net.BCrypt.Verify(TbxUserPassword.Password, foundPassword))
+                                //if (foundPassword == TbxPassword.Password)
+                                {
+                                    //adminLogged = Convert.ToInt32(reader["UserID"]);
+                                    //adminName = Convert.ToString(reader["Name"]);
 
-                                MessageBox.Show("Logged In", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                                this.Close();
-                                MainAdmin adminFrm = new MainAdmin();
-                                adminFrm.ShowDialog();
+                                    //MessageBox.Show("Logged In", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    this.Close();
+                                    MainAdmin adminFrm = new MainAdmin();
+                                    adminFrm.ShowDialog();
 
-               
 
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Sir/Madam, Username or Password did not match", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Sir/Madam, Username or Password did not match", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                MessageBox.Show("User not found", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                             }
 
 

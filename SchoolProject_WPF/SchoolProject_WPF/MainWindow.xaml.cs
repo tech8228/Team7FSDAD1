@@ -57,5 +57,27 @@ namespace SchoolProject_WPF
             this.Hide();
             studentRegisterWindow.Show();
         }
+
+        private void TempButton_Click(object sender, RoutedEventArgs e)
+        {
+            //RegTeacherFrm regTeacherFrm = new RegTeacherFrm();
+            //regTeacherFrm.ShowDialog();
+
+            //TeachersDetails teacherDetailsFrm = new TeachersDetails();
+            //teacherDetailsFrm.ShowDialog();
+
+            //StudentDetailsFrm DetailsFrm = new StudentDetailsFrm();
+            //DetailsFrm.ShowDialog();
+
+            
+
+            //MainAdmin adminFrm = new MainAdmin();
+            //adminFrm.ShowDialog();
+
+            //StudentCourseRegistrationFrm courseStudentFrm = new StudentCourseRegistrationFrm(); 
+            //courseStudentFrm.ShowDialog();
+
+
+        }
     }
 }

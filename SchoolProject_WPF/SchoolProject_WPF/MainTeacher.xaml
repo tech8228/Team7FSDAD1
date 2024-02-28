@@ -10,15 +10,16 @@
     <Grid>
 
         <TextBlock x:Name="TbxTeacher" Text="-" FontSize="24" Foreground="DarkBlue" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        
 
-        <StackPanel VerticalAlignment="Top" Height="320" Margin="10,57,101,0">
 
-            <DataGrid x:Name="DgTeacher" Width="377" Height="252" AutoGenerateColumns="True" />
+        <StackPanel VerticalAlignment="Top" Height="365" Margin="10,57,101,0">
 
-           
 
-            <Button x:Name="BtnFrmCancel" Content="Sign Out" Margin="10,30,10,0" Background="LightBlue"  Width="281" Click="BtnFrmCancel_Click" />
+            <DataGrid x:Name="DgTeacher"  Width="377" Height="252" AutoGenerateColumns="True" MouseDoubleClick="DgTeacher_MouseDoubleClick" />
+
+
+            <Button x:Name="BtnRefresh" Content="Refresh" Margin="10,30,10,0" Background="LightBlue"  Width="281" Click="BtnRefresh_Click" />
+            <Button x:Name="BtnFrmCancel" Content="Sign Out" Margin="10,10,10,0" Background="LightBlue"  Width="281" Click="BtnFrmCancel_Click" />
 
 
         </StackPanel>
@@ -31,6 +32,7 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </WrapPanel>
+        <Label x:Name="LblSubject" Content="-" Foreground="Green" FontSize="18" FontStyle="Italic" HorizontalAlignment="Left" Margin="34,10,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

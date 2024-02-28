@@ -21,7 +21,7 @@ namespace SchoolProject_WPF
     public partial class StudentLoginWindow : Window
     {
         public int studentLogged { get; set; }
-        string sqlString ="Data Source=.;Initial Catalog=StudentDb;Integrated Security=True;Encrypt=False";
+        
         public StudentLoginWindow()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace SchoolProject_WPF
 
         private void BtnStudentLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TbxStudentName.Text) || string.IsNullOrEmpty(TbxPassword.Text))
+            if (string.IsNullOrEmpty(TbxStudentName.Text) || string.IsNullOrEmpty(TbxPassword.Password))
             {
                 MessageBox.Show("Cannot be Empty.");
                 return ;
@@ -40,7 +40,7 @@ namespace SchoolProject_WPF
                 {
                 string query = "SELECT Password, StudentID FROM Students WHERE Name = @username";
 
-                using (SqlConnection con = new SqlConnection(sqlString))
+                using (SqlConnection con = new SqlConnection(DbString.conString))
                 {
                     con.Open();
                     using (SqlCommand cmd = new SqlCommand(query, con))
@@ -53,11 +53,11 @@ namespace SchoolProject_WPF
                             {
                                 string foundPassword = reader["Password"].ToString();
 
-                                //if (BCrypt.Net.BCrypt.Verify(TbxPassword.Text, foundPassword))
-                                if (foundPassword == TbxPassword.Text)
+                                if (BCrypt.Net.BCrypt.Verify(TbxPassword.Password, foundPassword))
+                                //if (foundPassword == TbxPassword.Password)
                                 {
                                     studentLogged = Convert.ToInt32(reader["StudentID"]);
-                                    MessageBox.Show("Logged In", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    //MessageBox.Show("Logged In", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                                     this.Close();
                                     MainStudent studentFrm = new MainStudent(studentLogged);
                                     studentFrm.ShowDialog();

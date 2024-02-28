@@ -15,26 +15,13 @@ using System.Windows.Shapes;
 namespace SchoolProject_WPF
 {
     /// <summary>
-    /// Interaction logic for Grade.xaml
+    /// Interaction logic for AssignCourseTeacherFrm.xaml
     /// </summary>
-    public partial class Grade : Window
+    public partial class AssignCourseTeacherFrm : Window
     {
-        public string gradeValue { get; set; }
-        public Grade()
+        public AssignCourseTeacherFrm()
         {
             InitializeComponent();
-        }
-
-        private void BtnGradeUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            gradeValue =  TbxGrade.Text;
-            DialogResult = true;
-            this.Close();
-        }
-
-        private void BtnGradeCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }
