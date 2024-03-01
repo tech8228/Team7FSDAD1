@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -19,7 +19,7 @@ namespace SchoolProject_WPF
     public static class DbString
     { 
         //public static string conString { get; } = "Data Source=.;Initial Catalog=StudentDb;Integrated Security=True;Encrypt=False";
-        public static string conString { get; } = "Data Source=ad1server.database.windows.net;Initial Catalog=StudentDb;User ID=sqladmin;Password=Ad1server;Encrypt=True";
+        public static string conString { get; } = "Data Source=ad1server.database.windows.net;Initial Catalog=StudentDb;User ID=****;Password=****;Encrypt=True";
 
     }
 }
